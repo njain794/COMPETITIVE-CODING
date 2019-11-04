@@ -1,0 +1,48 @@
+#include<iostream>
+#include<queue>
+using namespace std;
+int main()
+{
+    int n,k,a;
+    queue<int>q;
+    cin>>k;
+    cout<<"1.enqueue\n2.dequeue\n3.display\n4.exit";
+    do
+    {
+        cout<<"\nenter your choice";
+        cin>>n;
+        switch(n)
+        {
+        case 1:
+            if(q.size()==k)
+            {
+                cout<<"overflow";
+            }
+            else
+            {
+                cout<<"\nenter the value : ";
+                cin>>a;
+                q.push(a);
+            }
+            break;
+        case 2:
+            if(q.size()==0)
+            {
+                cout<<"underflow";
+            }
+            else
+            {
+                cout<<"\ndeleted element : "<<q.front();
+                q.pop();
+            }
+            break;
+        case 3:
+            while(!q.empty())
+            {
+                cout<<q.front();
+                q.pop();
+            }
+        }
+    }while(n<4);
+    return 0;
+}
