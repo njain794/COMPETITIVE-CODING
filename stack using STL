@@ -1,0 +1,57 @@
+#include<iostream>
+#include<stack>
+using namespace std;
+int main()
+{
+    int n,k,a;
+    stack<int>s;
+    cin>>k;
+    cout<<"1.push\n2.pop\n3.display\n4.exit";
+    do
+    {
+        cout<<"\nenter your choice";
+        cin>>n;
+        switch(n)
+        {
+        case 1:
+            if(s.size()==k)
+            {
+                cout<<"overflow";
+            }
+            else
+            {
+            cout<<"\nenter value : ";
+            cin>>a;
+            s.push(a);
+            }
+            break;
+        case 2:
+            if(s.size()==0)
+            {
+                cout<<"underflow";
+            }
+            else
+            {
+            cout<<"\nthe popped element is : "<<s.top();
+            s.pop();
+            }
+            break;
+        case 3:
+            if(s.size()==0)
+            {
+                cout<<"empty";
+            }
+            else
+            {
+                while(!s.empty())
+                {
+                    cout<<s.top()<<"\n";
+                    s.pop();
+                    cout<<"\n";
+                }
+            }
+            break;
+        }
+    }while(n<4);
+    return 0;
+}
