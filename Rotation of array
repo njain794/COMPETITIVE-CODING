@@ -1,0 +1,17 @@
+Small trick for rotating arrays:
+i = ith iteration
+D = number of elements to rotate
+N = size of array
+
+To handle large D values, before rotating use-
+if(D>N)
+D %= N;
+
+For left rotate-
+arr[i] = arr[(i+D)%N]
+
+For right rotate-
+arr[i] = arr[(i+N-D)%N]
+
+https://uploads.disquscdn.com/images/99ca534b4dab5b07ed00e58728702036ba0c82df769bacc1e55bea0a1bd630e7.png
+link of program
